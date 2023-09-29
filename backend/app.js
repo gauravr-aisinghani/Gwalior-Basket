@@ -41,6 +41,11 @@ app.use('/userinterface',userinterfaceRouter)
 app.use(function(req, res, next) {
   next(createError(404));
 });
+const port = process.env.PORT || 4000;
+
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 // error handler
 app.use(function(err, req, res, next) {
